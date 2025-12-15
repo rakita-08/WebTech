@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WebTech Assignment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+            background-color: darkgrey;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction:column;
+        }
+
+        /* Header */
+        header.green {
+            background-color: darkolivegreen;
+            color: bisque;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* Navbar */
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 50px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: bisque;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Middle section */
+        .rows {
+            flex: 1;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+        }
+
+        .blue { background-color: #2fa4c9; }
+        .cream { background-color: #e6dfd8; }
+        .yellow { background-color: #c9c75f; }
+
+        /* Footer */
+        footer {
+            background-color: blueviolet;
+            color: bisque;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+
+        .copyright p {
+            margin-bottom: 5px;
+        }
+
+        .copyright h6 {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .nav-links {
+                gap: 25px;
+            }
+
+            .rows {
+                flex-direction: column;
+            }
+
+            .box {
+                min-height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="green">
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="rows">
+            <div class="box blue">This is a section 1</div>
+            <div class="box cream">This is a section 2</div>
+            <div class="box yellow">This is a section 3</div>
+        </div>
+
+        <footer>
+            <div class="copyright">
+                <p>All rights are preserved and copyrighted.</p>
+                <h6>WebTech Assignment</h6>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
