@@ -111,8 +111,13 @@ body{
     margin-top: 10px;
      border-radius:10px;
 }
-button{
+.add_cart_btn{
      padding: 5px;
      background-color:  aliceblue;
      border-radius: 3px;
+}
+.content_title{
+    font-size: 50px;
+    color: rgb(146, 222, 200);
+    font-style: bold;
 }
