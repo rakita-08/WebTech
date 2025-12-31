@@ -110,7 +110,7 @@ h1{
     width:140px;
     margin-top: 10px;
     border-radius:10px;
-     box-shadow: 4px 4px dimgray;
+    box-shadow: 4px 4px dimgray;
 }
 .product_description{
     font-size: 14px;
@@ -141,4 +141,36 @@ h1{
 .cart img{
     height: 30px;
     width: 30px;
+}
+.about_container{
+    width: 600px;
+    height: 250px;
+    padding: 50px;
+    border:1px solid aliceblue;
+    border-radius: 15px;
+    box-shadow: 4px 4px dimgray;
+    margin-top: 100px;
+    background-color: rgb(212, 212, 222);
+    display: inline-block;
+    margin-right: 90px;
+    font-size: large;
+    text-align: right;
+}
+.about_description{
+    display: inline-block;
+    font-size: 17px;
+    text-align: justify;
+}
+.about_container a:hover,
+.about_description a:hover {
+    color: cornflowerblue;
+}
+.about img{
+    width: 600px;
+    height: 300px;
+    margin-top: 900px;
+    border-radius:10px;
+    box-shadow: 4px 4px dimgray;
+    display: inline-block;
+    margin-right: 50px;
 }
