@@ -144,7 +144,7 @@ h1{
 }
 .about_container{
     width: 600px;
-    height: 250px;
+    height: 550px;
     padding: 50px;
     border:1px solid aliceblue;
     border-radius: 15px;
@@ -161,17 +161,21 @@ h1{
     font-size: 17px;
     text-align: justify;
 }
+.about_container a{
+    color: rgb(86, 85, 98);
+    display: inline-block;
+    font-size: 17px;
+    text-align: justify;
+}
 .about_container a:hover,
 .about_description a:hover {
     color: cornflowerblue;
 }
-.abouts img{
-    width: 600px;
+.about_container img{
+    width: 500px;
     height: 300px;
-    margin-top: 900px;
+    margin-top: 20px;
     border-radius:10px;
     box-shadow: 4px 4px dimgray;
     display: inline-block;
-    margin-right: 50px;
-    margin-top: 0px;
 }
