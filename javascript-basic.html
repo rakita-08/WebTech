@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript Basic</title>
+        <script>
+            function display(){
+                //alert("you clicked");
+                
+                //sent to js
+
+                let firstname = document.getElementById("firstname").value;
+                let lastname =  document.getElementById("lastname").value;
+                let fullname = firstname+" "+lastname;
+                //alert(firstname+" "+lastname);
+                //document.writeln(firstname+" "+lastname);
+
+                //back to html
+                document.getElementById("display_box").innerText = fullname;
+            }
+           alert("Hello to js_basics"); 
+           // document.writeln("Hello");
+           //console.log("hello developer");
+           //let firstname = 'john';
+           //let lastname = 'nash';
+
+           //alert(firstname+" "+lastname);
+           //document.writeln(firstname+" "+lastname);
+    
+        </script>
+    </head>
+    <body>
+        <form action="#" method="post">
+            <input type="text" name="firstname" id="firstname"/>
+            <input type="text" name="lastname" id="lastname"/>
+            <input type="button" value="submit" onclick="display()"/>
+        </form>
+        <span id="display_box"></span>
+    </body>
+</html>
