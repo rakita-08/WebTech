@@ -2,9 +2,6 @@
 <html>
     <head>
         <title>Register Page</title>
-         <script>
-            alert("continue to register?");
-        </script>
         <link rel="stylesheet" href="style.css">
         <script>
             function validate(){
@@ -19,10 +16,18 @@
                     return false;
                 }
                 let email = document.getElementById("email").value;
+                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                if(!email.match(mailformat)){
+                    document.getElementById("email_error").innerText = "invalid email";
+                    return false;
+                }
+
+                /*
                 if (email === ""){
                     document.getElementById("email_error").innerText = "please enter your email";
                     return false;
-                }
+                }*/
+
                 let password = document.getElementById("password").value;
                 if (password === ""){
                     document.getElementById("password_error").innerText = "please enter your password";
@@ -34,7 +39,14 @@
                         return false;
                     }
                 }
+                
+                let check = document.getElementById("checkbox").checked;
+                if(!check){
+                    document.getElementById("check_error").innerText = "accept terms and conditions";
+                    return false;
+                }
                 return true;
+
                 //let ckbox = document.getElementById("checkbox");
                 /*if(
                     first_name === "" ||
@@ -49,7 +61,7 @@
             }
         </script>
         <style>
-            #first_name_error, #last_name_error, #email_error, #password_error{
+            #first_name_error, #last_name_error, #email_error, #password_error,#check_error{
                 font-style: italic;
                 color: red;
                 font-size: 12px;
@@ -75,38 +87,39 @@
          
         <div class ="container">
             <div id="register_form">
-                <form action="process_register.php" method="post" onclick="return validate()">
+                <form action="process_register.php" method="post" onsubmit="return validate()">
                     <div>
                         <label>First Name</label>
-                        <input type="text" name="first_name"id="first_name">
+                        <input type="text" name="first_name" id="first_name">
                         <span id="first_name_error"></span>
                     </div>
                     <br>
                      <div>
                         <label>Last Name</label>
-                        <input type="text" name="last_name"id="last_name">
+                        <input type="text" name="last_name" id="last_name">
                         <span id="last_name_error"></span>
                     </div>
                      <br>
                     <div>
                         <label>Email</label>
-                        <input type="email" name="email"id="email" placeholder="Enter a valid email">
+                        <input type="email" name="email" id="email" placeholder="Enter a valid email">
                         <span id="email_error"></span>
                     </div>
                      <br>
                     <div>
                         <label>Password</label>
-                        <input type="password" name="password"id="password">
+                        <input type="password" name="password" id="password">
                         <span id="password_error"></span>
                     </div>
                      <br>
                     <div>
-                        <input type="checkbox"value="1">
+                        <input type="checkbox" value="1" id="checkbox">
+                        <span id="check_error"></span>
                         Terms and conditions
                     </div>
                     <br>
                     <div>
-                        <input type="submit"value="Register"id="register_btn" onclick="validate()">
+                        <input type="submit" value="Register" id="register_btn">
                     </div>
                 </form>
             </div>
