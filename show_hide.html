@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>show hide div using js</title>
+        <script>
+            function show_hide(){
+                let ele = document.getElementById("box");
+                if(ele.style.display === "none"){
+                    ele.style.display = "block";
+                    document.getElementById("show_hide_btn").innerText = "hide";
+                } else{
+                    ele.style.display = "none";
+                    document.getElementById("show_hide_btn").innerText = "show";
+                }
+            }
+            function changeto_purple(){
+                document.getElementById("box").style.backgroundColor = "purple";
+            }
+            function changeto_green(){
+                document.getElementById("box").style.backgroundColor = "green";
+            }
+        </script>
+        <style>
+            #box{
+                height: 100px;
+                width: 100px;
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box" onmouseenter="changeto_purple()" onmouseleave="changeto_green()">
+        </div>
+        <button id="show_hide_btn" onclick="show_hide()">hide</button>
+    </body>
+</html>
