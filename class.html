@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>creating class using js</title>
+    </head>
+    <body>
+        <script>
+            class Person{
+                constructor(name, age, address, number){
+                    this.name = name;
+                    this.age = age;
+                    this.address = address;
+                    this.number = number;
+                }
+                get(){
+                    return this.name, this.age, this.address, this.number;
+                }
+            }
+            personA = new Person ("ryannie", 21, "pokhara", 973872101);
+            console.log(personA.get());
+            document.writeln(personA.name + "<br> " + personA.age + "<br> " + personA.address + "<br> " + personA.number);
+        </script>
+    </body>
+</html>
