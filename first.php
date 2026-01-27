@@ -27,7 +27,7 @@
         $number2 = $_POST["n2"];
         $result = $number1 + $number2;
        ?>
-            <div id="result">
+            <div id="result"> 
                 <?php echo "<h1>". "the result is " .  $result . "</h1>";?>
             </div>
         <?php } ?>
