@@ -1,7 +1,7 @@
 <?php
     $seasons = array ("summer","winter","sring","fall");
     foreach($seasons as $s){
-        echo $s;
+        echo $s . "<br>";
     }
     $salary = array(
         "sean"=>"45000.02",
@@ -9,7 +9,7 @@
         "gim"=>"34500.01"
     );
     foreach($salary as $s => $a){
-        echo $s . $a;
+        echo "Name: " . $s . "," . "Salary: " . $a . "<br>";
     }
 
 ?>
