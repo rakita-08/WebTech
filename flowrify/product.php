@@ -63,6 +63,34 @@ include_once "header.php";
                         <input type="button" value="+" class="add_cart_btn">
                     </p>
                 </div>
+                
+                <div class="product">
+                    <img src="assests/images/p5.png" alt="product_name">
+                    <p class="product_description">
+                        <a style="font-size: 17px; font-style: italic; color: rgb(94, 64, 166);">Dahlias.</a>
+                        <br>
+                        Symbolizes enthusiasm, energy, excitement, beauty and kindness. Popular in various floral arrangements.
+                    <p class="product_price">
+                        Price:$1.02
+                    </p>
+                    <p>
+                        <input type="button" value="+" class="add_cart_btn">
+                    </p>
+                </div>
+
+                 <div class="product">
+                    <img src="assests/images/p6.png" alt="product_name">
+                    <p class="product_description">
+                        <a style="font-size: 17px; font-style: italic; color: rgb(94, 64, 166);">Sunflower.</a>
+                        <br>
+                        Symbolizes loyalty, adoration, happiness, strength and positivity. Popular as an important food crop globally.
+                    <p class="product_price">
+                        Price:$1.12
+                    </p>
+                    <p>
+                        <input type="button" value="+" class="add_cart_btn">
+                    </p>
+                </div>
 
             </div>
 
