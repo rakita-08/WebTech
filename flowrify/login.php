@@ -8,10 +8,12 @@ include_once "header.php"
                         <label>Username</label>
                             <input type="text" name="username" id="username">
                     </div>
+                    <br>
                     <div>
                         <label>Password</label>
                             <input type="password" name="password" id="password">
                     </div>
+                    <br>
                     <div id="login_btn">
                         <input type="submit" value="login">
                     </div>
