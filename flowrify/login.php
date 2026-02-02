@@ -3,7 +3,7 @@ include_once "header.php"
 ?>
 <div class="container">
             <div id="login_form">
-                <form action="login_register.php" method="post">
+                <form action="login_process.php" method="post">
                     <div>
                         <label>Username</label>
                             <input type="text" name="username" id="username">
