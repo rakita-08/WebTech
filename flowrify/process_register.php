@@ -12,7 +12,7 @@ if(! $con){
 $fname = $_POST["first_name"];
 $lname = $_POST["last_name"];
 $email = $_POST["email"];
-$pw = md5($_POST["password"]);
+$pw = password_hash($_POST["password"], PASSWORD_DEFAULT);
 $query = "insert into user_data(First_Name, Last_Name, Email, Password)
  values ('$fname','$lname','$email','$pw')";
 $res = mysqli_query($con, $query);
