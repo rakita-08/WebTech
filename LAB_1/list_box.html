@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>List Box</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      text-align: center;
+    }
+    h2 {
+      color: darkblue;
+    }
+    select {
+      width: 250px;
+      padding: 5px;
+      font-size: 16px;
+      border: 2px solid rgb(104, 104, 169);
+      border-radius: 4px;
+      background-color: rgb(170, 180, 224);
+    }
+    label {
+      font-size: 16px;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .box-section {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>List Box Examples</h2>
+
+  <!-- Single Selection List Box -->
+  <div class="box-section">
+    <label>Select Your Course:</label>
+    <select size="5">
+      <option>B.Sc. CSIT</option>
+      <option>BCA</option>
+      <option>BIT</option>
+      <option>BIM</option>
+      <option>M.Sc. CSIT</option>
+      <option>MIT</option>
+    </select>
+  </div>
+
+  <!-- Multiple Selection List Box -->
+  <div class="box-section">
+    <label>Select Your Subjects (Hold Ctrl to select multiple):</label>
+    <select size="6" multiple>
+      <option>Web Technology</option>
+      <option>DBMS</option>
+      <option>Operating System</option>
+      <option>Computer Networks</option>
+      <option>Artificial Intelligence</option>
+      <option>Software Engineering</option>
+    </select>
+  </div>
+
+  <!-- Drop Down List Box -->
+  <div class="box-section">
+    <label>Select Your University:</label>
+    <select>
+      <option value="">-- Select University --</option>
+      <option>TU</option>
+      <option>PU</option>
+      <option>KU</option>
+      <option>SU</option>
+      <option>GU</option>
+      <option>PuU</option>
+    </select>
+  </div>
+
+  <!-- List Box with Option Groups -->
+  <div class="box-section">
+    <label>Select Programming Language:</label>
+    <select size="7">
+      <optgroup label="Web Languages">
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>JavaScript</option>
+      </optgroup>
+      <optgroup label="Backend Languages">
+        <option>Python</option>
+        <option>Java</option>
+        <option>PHP</option>
+      </optgroup>
+    </select>
+  </div>
+
+</body>
+</html>

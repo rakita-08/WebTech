@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebPage Layout</title>
+   <style>
+        body{
+            background-color: rgb(85, 101, 166);
+        }
+        header{
+            text-align: center;
+            background-color: rgb(201, 195, 194);
+            height: 10vh;
+            justify-content: center;
+            align-items: center;
+        }
+        #container{
+            display: flex;
+            width: 100%;
+        }
+        #second{
+            background-color: rgb(61, 61, 58);
+            height: 10vh;
+        }
+        #box_1{
+            height: 70vh;
+            background-color: rgb(24, 95, 27);
+            width: 33.33%;
+        }
+        #box_2{
+            height:70vh;
+            background-color:floralwhite;
+            width: 33.33%;
+        }
+        #box_3{
+            height:70vh;
+            background-color: rgb(102, 34, 126);
+            width: 33.33%;
+        }
+        footer{
+            text-align: center;
+            background-color:rgb(201, 195, 194);
+            height: 9vh;
+            display: flex;
+            justify-content: center;
+        }
+   </style>
+<body>
+        <header class="header">
+            <p>Header</p>
+        </header>
+        <div id="second"></div>
+        <div id="container">
+            <div id="box_1"></div>
+            <div id="box_2"></div>
+            <div id="box_3"></div>
+        </div>
+        <footer>
+            <div id="copyright">
+                <p>All rights are preserved and copyrighted.</p>
+            </div>
+        </footer>
+</body>
+</html>
