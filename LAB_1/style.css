@@ -3,3 +3,129 @@
    text-align: center;
    font-size: 18px;
 }
+
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+    }
+    .marksheet {
+      width: 700px;
+      margin: 0 auto;
+      background-color: white;
+      border: 3px solid black;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      color: darkblue;
+    }
+    h3 {
+      text-align: center;
+    }
+    .info {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .info td {
+      font-size: 15px;
+      padding: 4px;
+    }
+    table.marks {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table.marks th {
+      background-color: darkblue;
+      color: white;
+      padding: 8px;
+      border: 1px solid black;
+      text-align: center;
+    }
+    table.marks td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+    table.marks tr:nth-child(even) {
+      background-color: #f0f0f0;
+    }
+    .total-row {
+      background-color: lightyellow !important;
+      font-weight: bold;
+    }
+    .result {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 15px;
+      color: green;
+    }
+    .grade {
+      text-align: center;
+      font-size: 16px;
+      margin-top: 5px;
+    }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+      font-weight: bold;
+    }
+
+
+    
+    .form-container {
+      width: 500px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 30px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    table {
+      width: 100%;
+    }
+    td {
+      padding: 8px 5px;
+      font-size: 15px;
+      vertical-align: middle;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 7px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    input[type="submit"],
+    input[type="reset"] {
+      padding: 9px 25px;
+      font-size: 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    input[type="submit"] {
+      background-color: darkblue;
+      color: white;
+    }
+    input[type="reset"] {
+      background-color: gray;
+      color: white;
+    }
+    .radio-group label,
+    .checkbox-group label {
+      margin-right: 15px;
+      font-size: 14px;
+    }

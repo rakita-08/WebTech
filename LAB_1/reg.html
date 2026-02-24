@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Registration Form</h2>
+    <hr>
+
+    <form action="#" method="post">
+      <table>
+
+        <tr>
+          <td><label>First Name:</label></td>
+          <td><input type="text" name="firstname" placeholder="Enter first name"></td>
+        </tr>
+
+        <tr>
+          <td><label>Last Name:</label></td>
+          <td><input type="text" name="lastname" placeholder="Enter last name"></td>
+        </tr>
+
+        <tr>
+          <td><label>Email:</label></td>
+          <td><input type="email" name="email" placeholder="Enter email"></td>
+        </tr>
+
+        <tr>
+          <td><label>Password:</label></td>
+          <td><input type="password" name="password" placeholder="Enter password"></td>
+        </tr>
+
+        <tr>
+          <td><label>Date of Birth:</label></td>
+          <td><input type="date" name="dob"></td>
+        </tr>
+
+        <tr>
+          <td><label>Gender:</label></td>
+          <td class="radio-group">
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+            <label><input type="radio" name="gender" value="other"> Other</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td><label>Course:</label></td>
+          <td>
+            <select name="course">
+              <option value="">-- Select Course --</option>
+              <option><B class="Sc CSIT"></B></option>
+              <option>BCA</option>
+              <option>BIT</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td><label>Mobile No:</label></td>
+          <td><input type="number" name="mobile" placeholder="Enter mobile number"></td>
+        </tr>
+
+        <tr>
+          <td><label>Address:</label></td>
+          <td><textarea name="address" rows="2" placeholder="Enter your address"></textarea></td>
+        </tr>
+
+        <tr>
+          <td><label>Hobbies:</label></td>
+          <td class="checkbox-group">
+            <label><input type="checkbox" name="hobby" value="reading"> Reading</label>
+            <label><input type="checkbox" name="hobby" value="coding"> Coding</label>
+            <label><input type="checkbox" name="hobby" value="sports"> Sports</label>
+            <label><input type="checkbox" name="hobby" value="music"> Music</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td>
+            <br>
+            <input type="submit" value="Register">
+            <input type="reset" value="Clear">
+          </td>
+        </tr>
+
+      </table>
+    </form>
+
+  </div>
+
+</body>
+</html>
