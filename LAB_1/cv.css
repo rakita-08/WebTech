@@ -1,0 +1,86 @@
+body {
+      font-family: Arial, sans-serif;
+      background-color: #e8e8e8;
+      margin: 30px;
+    }
+    .cv {
+      width: 750px;
+      margin: 0 auto;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 30px;
+    }
+    /* Header Section */
+    .header {
+      background-color: darkblue;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .header p {
+      margin: 5px 0 0 0;
+      font-size: 14px;
+    }
+    /* Section headings */
+    h2 {
+      background-color: darkblue;
+      color: white;
+      padding: 6px 10px;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    /* Info table */
+    table.info {
+      width: 100%;
+    }
+    table.info td {
+      padding: 5px;
+      font-size: 15px;
+      vertical-align: top;
+    }
+    table.info td:first-child {
+      font-weight: bold;
+      width: 160px;
+    }
+    /* Lists */
+    ul {
+      margin: 5px 0;
+      padding-left: 20px;
+    }
+    ul li {
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    /* Skills table */
+    table.skills {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 5px;
+    }
+    table.skills th {
+      background-color: #dde;
+      border: 1px solid #aaa;
+      padding: 7px;
+      font-size: 14px;
+      text-align: left;
+    }
+    table.skills td {
+      border: 1px solid #aaa;
+      padding: 7px;
+      font-size: 14px;
+    }
+    /* Declaration */
+    .declaration {
+      font-size: 14px;
+      margin-top: 10px;
+      color: #333;
+    }
+    .signature {
+      margin-top: 30px;
+      text-align: right;
+      font-weight: bold;
+    }
