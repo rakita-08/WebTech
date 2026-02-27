@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sum of Even Numbers</title>
+</head>
+<body>
+
+  <h2>Sum of All Even Numbers from 1 to 25</h2>
+
+  <button onclick="sumEven()">Calculate</button>
+
+  <p id="output"></p>
+
+  <script>
+    function sumEven() {
+      var sum = 0;
+      var evenNumbers = "";
+
+      for (var i = 1; i <= 25; i++) {
+        if (i % 2 == 0) {
+          sum = sum + i;
+          evenNumbers = evenNumbers + i + " ";
+        }
+      }
+
+      document.getElementById("output").innerHTML =
+        "<b>Even Numbers :</b> " + evenNumbers + "<br>" +
+        "<b>Sum of Even Numbers from 1 to 25 :</b> " + sum;
+    }
+  </script>
+
+</body>
+</html>
