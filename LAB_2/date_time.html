@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Current Date and Time</title>
+</head>
+<body>
+
+  <h2>Current Date and Time</h2>
+
+  <button onclick="showDateTime()">Show Date & Time</button>
+
+  <p id="datetime"></p>
+
+  <script>
+    function showDateTime() {
+      var now = new Date();
+
+      var day   = now.getDate();
+      var month = now.getMonth() + 1;   // Month starts from 0
+      var year  = now.getFullYear();
+
+      var hours   = now.getHours();
+      var minutes = now.getMinutes();
+      var seconds = now.getSeconds();
+
+      // Add leading zero if less than 10
+      if (day < 10)     day     = "0" + day;
+      if (month < 10)   month   = "0" + month;
+      if (hours < 10)   hours   = "0" + hours;
+      if (minutes < 10) minutes = "0" + minutes;
+      if (seconds < 10) seconds = "0" + seconds;
+
+      var dateStr = day + "/" + month + "/" + year;
+      var timeStr = hours + ":" + minutes + ":" + seconds;
+
+      document.getElementById("datetime").innerHTML =
+        "<b>Date :</b> " + dateStr + "<br>" +
+        "<b>Time :</b> " + timeStr;
+    }
+  </script>
+
+</body>
+</html>
