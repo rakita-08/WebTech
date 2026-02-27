@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sum of Two Numbers</title>
+</head>
+<body>
+  <h2>Sum of Two Numbers Using Prompt</h2>
+  <button onclick="addNumbers()">Enter Numbers</button>
+
+  <p id="result"></p>
+
+  <script>
+    function addNumbers() {
+      var num1 = prompt("Enter first number:");
+      var num2 = prompt("Enter second number:");
+
+      // Convert string to number
+      num1 = Number(num1);
+      num2 = Number(num2);
+
+      var sum = num1 + num2;
+
+      document.getElementById("result").innerHTML =
+        "First Number  : " + num1 + "<br>" +
+        "Second Number : " + num2 + "<br>" +
+        "Sum           : " + sum;
+    }
+  </script>
+
+</body>
+</html>
