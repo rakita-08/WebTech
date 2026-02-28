@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Validation</title>
+  <link rel="stylesheet" href="mail.css">
+</head>
+<body>
+
+  <h2>Email Validation Using Regular Expression</h2>
+
+  <input type="text" id="email" placeholder="Enter email address">
+  <button onclick="validateEmail()">Validate</button>
+
+  <p id="result"></p>
+
+  <script>
+
+    // Regular Expression for Email Validation
+    var emailRegex = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    function validateEmail() {
+      var email  = document.getElementById("email").value;
+      var result = document.getElementById("result");
+
+      if (email == "") {
+        result.className = "invalid";
+        result.innerHTML = "Please enter an email address.";
+        return;
+      }
+
+      if (emailRegex.test(email)) {
+        result.className = "valid";
+        result.innerHTML = "&#10004; Valid Email Address: " + email;
+      } else {
+        result.className = "invalid";
+        result.innerHTML = "&#10008; Invalid Email Address: " + email;
+      }
+    }
+
+    // Test a list of emails automatically
+    function testMultiple() {
+      var emails = [
+        "rahul@gmail.com",
+        "priya.sharma@yahoo.co.in",
+        "user@domain.org",
+        "invalid-email",
+        "missing@dotcom",
+        "@nodomain.com",
+        "no_at_sign.com",
+        "test.email+tag@example.com",
+        "user@.com",
+        "valid123@college.edu"
+      ];
+
+      var html = "<br><table border='1' cellpadding='8' cellspacing='0'>";
+      html += "<tr style='background:darkblue; color:white;'>" +
+              "<th>Sr.</th><th>Email Address</th><th>Result</th></tr>";
+
+      emails.forEach(function(email, index) {
+        var isValid = emailRegex.test(email);
+        var status  = isValid
+          ? "<span style='color:green; font-weight:bold;'>&#10004; Valid</span>"
+          : "<span style='color:red;   font-weight:bold;'>&#10008; Invalid</span>";
+
+        html += "<tr><td>" + (index + 1) + "</td>" +
+                "<td>" + email + "</td>" +
+                "<td>" + status + "</td></tr>";
+      });
+
+      html += "</table>";
+      document.getElementById("multiResult").innerHTML = html;
+    }
+
+  </script>
+
+</body>
+</html>
