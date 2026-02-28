@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dropdown with jQuery</title>
+
+  <!-- Include jQuery from CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    h2 {
+      color: darkblue;
+    }
+    select {
+      width: 250px;
+      padding: 8px;
+      font-size: 15px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+    button {
+      padding: 8px 16px;
+      background-color: darkblue;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 15px;
+      font-size: 15px;
+      background-color: #f0f8ff;
+      border: 1px solid #aac;
+      padding: 12px;
+      width: 400px;
+      border-left: 4px solid darkblue;
+    }
+    h3 {
+      color: darkgreen;
+      margin-top: 30px;
+    }
+    label {
+      font-weight: bold;
+      font-size: 14px;
+      display: block;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Dropdown Box Using jQuery</h2>
+
+  <!-- Example 1: Get on Button Click -->
+  <h3>1. Get Value on Button Click</h3>
+  <label>Select a Course:</label>
+  <select id="courseDropdown">
+    <option value="bsc">B.Sc. Computer Science</option>
+    <option value="bca">BCA</option>
+    <option value="mca">MCA</option>
+    <option value="msc">M.Sc. Computer Science</option>
+    <option value="btech">B.Tech</option>
+  </select>
+  <button id="btnGet">Get Selected</button>
+  <div class="result" id="result1"></div>
+
+  <!-- Example 2: Get on Change Event -->
+  <h3>2. Get Value on Change (Auto-detect)</h3>
+  <label>Select a Subject:</label>
+  <select id="subjectDropdown">
+    <option value="">-- Select Subject --</option>
+    <option value="wt">Web Technology</option>
+    <option value="dbms">Database Management</option>
+    <option value="os">Operating System</option>
+    <option value="cn">Computer Networks</option>
+    <option value="ai">Artificial Intelligence</option>
+  </select>
+  <div class="result" id="result2"></div>
+
+  <!-- Example 3: Multiple select -->
+  <h3>3. Multiple Selection Dropdown</h3>
+  <label>Select Languages (Hold Ctrl for multiple):</label>
+  <select id="multiSelect" multiple size="5">
+    <option value="html">HTML</option>
+    <option value="css">CSS</option>
+    <option value="js">JavaScript</option>
+    <option value="python">Python</option>
+    <option value="java">Java</option>
+  </select>
+  <br><br>
+  <button id="btnMulti">Get All Selected</button>
+  <div class="result" id="result3"></div>
+
+
+  <script>
+    $(document).ready(function() {
+
+      // Example 1: Button click - get selected value and text
+      $("#btnGet").click(function() {
+        var selectedValue = $("#courseDropdown").val();
+        var selectedText  = $("#courseDropdown option:selected").text();
+
+        $("#result1").html(
+          "<b>Selected Value (val):</b> " + selectedValue + "<br>" +
+          "<b>Selected Text (text):</b> " + selectedText
+        );
+      });
+
+      // Example 2: onChange event - auto get value and text
+      $("#subjectDropdown").change(function() {
+        var selectedValue = $(this).val();
+        var selectedText  = $(this).find("option:selected").text();
+
+        if (selectedValue == "") {
+          $("#result2").html("Please select a subject.");
+          return;
+        }
+
+        $("#result2").html(
+          "<b>Selected Value:</b> " + selectedValue + "<br>" +
+          "<b>Selected Text :</b> " + selectedText
+        );
+      });
+
+      // Example 3: Multiple selection
+      $("#btnMulti").click(function() {
+        var selectedValues = [];
+        var selectedTexts  = [];
+
+        $("#multiSelect option:selected").each(function() {
+          selectedValues.push($(this).val());
+          selectedTexts.push($(this).text());
+        });
+
+        if (selectedValues.length == 0) {
+          $("#result3").html("No option selected.");
+          return;
+        }
+
+        $("#result3").html(
+          "<b>Selected Values:</b> " + selectedValues.join(", ") + "<br>" +
+          "<b>Selected Texts :</b> " + selectedTexts.join(", ") + "<br>" +
+          "<b>Total Selected:</b> "  + selectedValues.length
+        );
+      });
+
+    });
+  </script>
+
+</body>
+</html>
