@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cookie Operations</title>
+  <link rel="stylesheet" href="cookie.css">
+</head>
+<body>
+
+  <h2>Cookie Operations in JavaScript</h2>
+
+  <!-- SET COOKIE -->
+  <h3>1. Set Cookie</h3>
+  <div class="row">
+    <label>Cookie Name :</label>
+    <input type="text" id="setCookieName" placeholder="e.g. username"><br><br>
+    <label>Cookie Value:</label>
+    <input type="text" id="setCookieValue" placeholder="e.g. Rahul"><br><br>
+    <label>Expires (days):</label>
+    <input type="number" id="setCookieDays" value="7">
+    <button class="btn-set" onclick="setCookieBtn()">Set Cookie</button>
+  </div>
+  <div class="result" id="setResult"></div>
+
+  <!-- GET COOKIE -->
+  <h3>2. Get Cookie</h3>
+  <div class="row">
+    <label>Cookie Name:</label>
+    <input type="text" id="getCookieName" placeholder="e.g. username">
+    <button class="btn-get" onclick="getCookieBtn()">Get Cookie</button>
+  </div>
+  <div class="result" id="getResult"></div>
+
+  <!-- DELETE COOKIE -->
+  <h3>3. Delete Cookie</h3>
+  <div class="row">
+    <label>Cookie Name:</label>
+    <input type="text" id="deleteCookieName" placeholder="e.g. username">
+    <button class="btn-delete" onclick="deleteCookieBtn()">Delete Cookie</button>
+  </div>
+  <div class="result" id="deleteResult"></div>
+
+  <!-- SHOW ALL COOKIES -->
+  <h3>4. Show All Cookies</h3>
+  <button class="btn-show" onclick="showAllCookies()">Show All Cookies</button>
+  <div class="result" id="allCookies"></div>
+
+
+  <script>
+
+    // -----------------------------------------------
+    // FUNCTION 1: setCookie
+    // name    - cookie name
+    // value   - cookie value
+    // days    - number of days until cookie expires
+    // -----------------------------------------------
+    function setCookie(name, value, days) {
+      var expires = "";
+
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+
+      document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    // -----------------------------------------------
+    // FUNCTION 2: getCookie
+    // name - cookie name to search for
+    // returns the value if found, else null
+    // -----------------------------------------------
+    function getCookie(name) {
+      var nameEQ   = name + "=";
+      var allCookies = document.cookie.split(";");
+
+      for (var i = 0; i < allCookies.length; i++) {
+        var cookie = allCookies[i].trim();
+
+        if (cookie.indexOf(nameEQ) == 0) {
+          return cookie.substring(nameEQ.length);
+        }
+      }
+
+      return null;   // Cookie not found
+    }
+
+    // -----------------------------------------------
+    // FUNCTION 3: deleteCookie
+    // name - cookie name to delete
+    // Sets expiry date to past so browser removes it
+    // -----------------------------------------------
+    function deleteCookie(name) {
+      document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+    }
+
+
+    // ---- Button Handler Functions ----
+
+    function setCookieBtn() {
+      var name  = document.getElementById("setCookieName").value;
+      var value = document.getElementById("setCookieValue").value;
+      var days  = document.getElementById("setCookieDays").value;
+
+      if (name == "" || value == "") {
+        document.getElementById("setResult").innerHTML =
+          "Please enter both cookie name and value.";
+        return;
+      }
+
+      setCookie(name, value, days);
+      document.getElementById("setResult").innerHTML =
+        "Cookie Set Successfully!<br>" +
+        "Name    : " + name + "<br>" +
+        "Value   : " + value + "<br>" +
+        "Expires : " + days + " day(s)";
+    }
+
+    function getCookieBtn() {
+      var name  = document.getElementById("getCookieName").value;
+
+      if (name == "") {
+        document.getElementById("getResult").innerHTML =
+          "Please enter cookie name.";
+        return;
+      }
+
+      var value = getCookie(name);
+
+      if (value != null) {
+        document.getElementById("getResult").innerHTML =
+          "Cookie Found!<br>" +
+          "Name  : " + name + "<br>" +
+          "Value : " + value;
+      } else {
+        document.getElementById("getResult").innerHTML =
+          "Cookie '" + name + "' not found.";
+      }
+    }
+
+    function deleteCookieBtn() {
+      var name = document.getElementById("deleteCookieName").value;
+
+      if (name == "") {
+        document.getElementById("deleteResult").innerHTML =
+          "Please enter cookie name.";
+        return;
+      }
+
+      // Check if it exists first
+      var exists = getCookie(name);
+
+      if (exists == null) {
+        document.getElementById("deleteResult").innerHTML =
+          "Cookie '" + name + "' does not exist.";
+        return;
+      }
+
+      deleteCookie(name);
+      document.getElementById("deleteResult").innerHTML =
+        "Cookie '" + name + "' has been deleted successfully.";
+    }
+
+    function showAllCookies() {
+      var all = document.cookie;
+
+      if (all == "") {
+        document.getElementById("allCookies").innerHTML =
+          "No cookies found.";
+        return;
+      }
+
+      var cookies = all.split(";");
+      var html    = "All Cookies (" + cookies.length + "):<br><br>";
+
+      cookies.forEach(function(cookie, index) {
+        var parts = cookie.trim().split("=");
+        html += (index + 1) + ". Name: <b>" + parts[0] +
+                "</b> | Value: <b>" + parts[1] + "</b><br>";
+      });
+
+      document.getElementById("allCookies").innerHTML = html;
+    }
+
+  </script>
+
+</body>
+</html>
