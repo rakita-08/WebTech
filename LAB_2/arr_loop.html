@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Array and forEach Loop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    h2 {
+      color: darkblue;
+    }
+    h3 {
+      color: darkgreen;
+      margin-top: 25px;
+    }
+    p {
+      font-size: 15px;
+      margin: 3px 0;
+    }
+    button {
+      padding: 8px 18px;
+      background-color: darkblue;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Array and forEach Loop in JavaScript</h2>
+
+  <button onclick="runExamples()">Run Examples</button>
+
+  <div id="output"></div>
+
+  <script>
+    function runExamples() {
+
+      var html = "";
+
+      // -----------------------------------------------
+      // Example 1: Simple Array of Numbers
+      // -----------------------------------------------
+      var numbers = [10, 20, 30, 40, 50];
+
+      html += "<h3>1. Array of Numbers</h3>";
+      html += "<p><b>Array:</b> " + numbers + "</p>";
+
+      html += "<p><b>Printing using forEach:</b></p>";
+      numbers.forEach(function(num) {
+        html += "<p>Number: " + num + "</p>";
+      });
+
+      // -----------------------------------------------
+      // Example 2: Sum of Array Elements using forEach
+      // -----------------------------------------------
+      var sum = 0;
+      numbers.forEach(function(num) {
+        sum = sum + num;
+      });
+
+      html += "<h3>2. Sum of Array Elements</h3>";
+      html += "<p><b>Sum of [10,20,30,40,50] = </b>" + sum + "</p>";
+
+      // -----------------------------------------------
+      // Example 3: Array of Strings
+      // -----------------------------------------------
+      var fruits = ["Apple", "Banana", "Mango", "Orange", "Grapes"];
+
+      html += "<h3>3. Array of Fruits (Strings)</h3>";
+      fruits.forEach(function(fruit, index) {
+        html += "<p>" + (index + 1) + ". " + fruit + "</p>";
+      });
+
+      // -----------------------------------------------
+      // Example 4: Array of Student Names and Marks
+      // -----------------------------------------------
+      var students = [
+        { name: "Rahul",  marks: 85 },
+        { name: "Priya",  marks: 92 },
+        { name: "Amit",   marks: 78 },
+        { name: "Sneha",  marks: 66 },
+        { name: "Rohan",  marks: 55 }
+      ];
+
+      html += "<h3>4. Array of Objects — Student Marks</h3>";
+      students.forEach(function(student) {
+        var result = student.marks >= 35 ? "Pass" : "Fail";
+        html += "<p>" + student.name + " — Marks: " + student.marks +
+                " — Result: <b>" + result + "</b></p>";
+      });
+
+      // -----------------------------------------------
+      // Example 5: Array Methods
+      // -----------------------------------------------
+      var nums = [5, 12, 8, 25, 3, 19, 7];
+
+      html += "<h3>5. Useful Array Methods</h3>";
+      html += "<p><b>Original Array:</b> " + nums + "</p>";
+      html += "<p><b>Length:</b> " + nums.length + "</p>";
+      html += "<p><b>Sorted:</b> " + nums.slice().sort(function(a,b){ return a-b; }) + "</p>";
+      html += "<p><b>Max Value:</b> " + Math.max(...nums) + "</p>";
+      html += "<p><b>Min Value:</b> " + Math.min(...nums) + "</p>";
+
+      // Push and Pop
+      nums.push(100);
+      html += "<p><b>After push(100):</b> " + nums + "</p>";
+
+      nums.pop();
+      html += "<p><b>After pop():</b> " + nums + "</p>";
+
+      document.getElementById("output").innerHTML = html;
+    }
+  </script>
+
+</body>
+</html>
