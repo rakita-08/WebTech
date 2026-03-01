@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sequential Animation</title>
+
+  <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <link rel="stylesheet" href="13.css">
+</head>
+<body>
+
+  <h2>Sequential Animation — Width, Height, Opacity</h2>
+
+  <!-- Section 1: Step-by-Step Sequential Animation -->
+  <div class="section">
+    <h3>1. Sequential Animation — Width → Height → Opacity</h3>
+    <p>Click the button to animate width, then height, then opacity — one after another.</p>
+
+    <!-- Step Indicators -->
+    <div class="steps">
+      <span class="step" id="step1">Step 1: Width</span>
+      <span>&rarr;</span>
+      <span class="step" id="step2">Step 2: Height</span>
+      <span>&rarr;</span>
+      <span class="step" id="step3">Step 3: Opacity</span>
+    </div>
+
+    <!-- The Box -->
+    <div id="animBox">Animating...</div>
+
+    <!-- Buttons -->
+    <button id="btnAnimate">&#9654; Start Animation</button>
+    <button id="btnReset">&#8635; Reset</button>
+
+    <p id="status">Status: Ready. Click Start Animation.</p>
+  </div>
+
+
+  <script>
+    $(document).ready(function() {
+
+      // -----------------------------------------------
+      // Section 1: Sequential Animation using Callbacks
+      // Each animation starts only AFTER previous one ends
+      // -----------------------------------------------
+      $("#btnAnimate").click(function() {
+
+        // Disable button during animation
+        $(this).prop("disabled", true);
+
+        // Reset steps
+        $(".step").removeClass("done");
+        $("#status").text("Status: Step 1 — Animating Width...");
+
+        // STEP 1: Animate Width
+        $("#animBox").animate({ width: "350px" }, 800, function() {
+
+          $("#step1").addClass("done");
+          $("#status").text("Status: Step 2 — Animating Height...");
+
+          // STEP 2: Animate Height (starts after Step 1 finishes)
+          $("#animBox").animate({ height: "180px", lineHeight: "180px" }, 800, function() {
+
+            $("#step2").addClass("done");
+            $("#status").text("Status: Step 3 — Animating Opacity...");
+
+            // STEP 3: Animate Opacity (starts after Step 2 finishes)
+            $("#animBox").animate({ opacity: 0.2 }, 800, function() {
+
+              $("#step3").addClass("done");
+              $("#status").text("Status: All animations complete!");
+              $("#btnAnimate").prop("disabled", false);
+            });
+          });
+        });
+      });
+
+      // Reset Button — restores original size
+      $("#btnReset").click(function() {
+        $("#animBox").stop(true).css({
+          width:      "100px",
+          height:     "100px",
+          lineHeight: "100px",
+          opacity:    1
+        });
+        $(".step").removeClass("done");
+        $("#status").text("Status: Reset done. Click Start Animation.");
+        $("#btnAnimate").prop("disabled", false);
+      });
+
+
+      // -----------------------------------------------
+      // Section 2: All Three Properties at Same Time
+      // -----------------------------------------------
+      var box2Original = true;
+
+      $("#btnFade").click(function() {
+        if (box2Original) {
+          $("#status2").text("Status: Animating width, height, opacity together...");
+
+          // All three animate simultaneously
+          $("#box2").animate({
+            width:   "300px",
+            height:  "60px",
+            opacity: 0.3
+          }, 1000, function() {
+            $("#status2").text("Status: Animation complete!");
+          });
+
+          box2Original = false;
+        } else {
+          $("#status2").text("Status: Reversing...");
+
+          $("#box2").animate({
+            width:   "120px",
+            height:  "120px",
+            opacity: 1
+          }, 1000, function() {
+            $("#status2").text("Status: Reversed! Click again to animate.");
+          });
+
+          box2Original = true;
+        }
+      });
+
+      // Reset box2
+      $("#btnReset2").click(function() {
+        $("#box2").stop(true).css({
+          width: "120px", height: "120px",
+          lineHeight: "120px", opacity: 1
+        });
+        box2Original = true;
+        $("#status2").text("Status: Reset done.");
+      });
+
+
+      // -----------------------------------------------
+      // Section 3: Loop Animation using Recursive Function
+      // -----------------------------------------------
+      var looping = false;
+
+      function loopAnimate() {
+        if (!looping) return;
+
+        $("#status3").text("Status: Expanding width...");
+
+        // Step 1: Animate Width
+        $("#box3").animate({ width: "280px" }, 600, function() {
+          if (!looping) return;
+          $("#status3").text("Status: Expanding height...");
+
+          // Step 2: Animate Height
+          $("#box3").animate({ height: "150px", lineHeight: "150px" }, 600, function() {
+            if (!looping) return;
+            $("#status3").text("Status: Fading opacity...");
+
+            // Step 3: Animate Opacity
+            $("#box3").animate({ opacity: 0.1 }, 600, function() {
+              if (!looping) return;
+              $("#status3").text("Status: Resetting...");
+
+              // Reset and loop again
+              $("#box3").animate({
+                width: "80px", height: "80px", opacity: 1
+              }, 400, function() {
+                $("#box3").css("lineHeight", "80px");
+                loopAnimate();    // Recursive call — repeat the loop
+              });
+            });
+          });
+        });
+      }
+
+      // Start Loop
+      $("#btnAll").click(function() {
+        if (looping) return;
+        looping = true;
+        loopAnimate();
+      });
+
+      // Stop Loop
+      $("#btnStopLoop").click(function() {
+        looping = false;
+        $("#box3").stop(true).css({
+          width: "80px", height: "80px",
+          lineHeight: "80px", opacity: 1
+        });
+        $("#status3").text("Status: Loop stopped.");
+      });
+
+    });
+  </script>
+
+</body>
+</html>
