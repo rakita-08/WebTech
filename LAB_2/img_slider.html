@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Slider</title>
+
+  <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <link rel="stylesheet" href="12.css">
+</head>
+<body>
+
+  <h2>Image Slider — Next & Previous</h2>
+
+  <div class="slider-container">
+
+    <!-- Image Display Area -->
+    <div class="image-box">
+
+      <!--
+        Using placeholder images from picsum.photos
+        Replace src with your own image paths if needed
+        e.g. src="img1.jpg"
+      -->
+      <img src="https://picsum.photos/id/10/460/280"  alt="Nature"      class="active">
+      <img src="https://picsum.photos/id/20/460/280"  alt="City"               >
+      <img src="https://picsum.photos/id/30/460/280"  alt="Mountains"          >
+      <img src="https://picsum.photos/id/40/460/280"  alt="Forest"             >
+      <img src="https://picsum.photos/id/50/460/280"  alt="Ocean"              >
+
+    </div>
+
+    <!-- Caption -->
+    <div class="caption" id="caption">Nature</div>
+
+    <!-- Prev / Counter / Next Buttons -->
+    <div class="nav-buttons">
+      <button id="btnPrev">&#8592; Prev</button>
+      <span class="counter" id="counter">1 / 5</span>
+      <button id="btnNext">Next &#8594;</button>
+    </div>
+
+    <!-- Dot Indicators -->
+    <div class="dots" id="dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot"        data-index="1"></span>
+      <span class="dot"        data-index="2"></span>
+      <span class="dot"        data-index="3"></span>
+      <span class="dot"        data-index="4"></span>
+    </div>
+
+    <!-- Auto Play Controls -->
+    <div class="controls">
+      <button id="btnPlay">&#9654; Auto Play</button>
+      <button id="btnStop">&#9646;&#9646; Stop</button>
+    </div>
+
+  </div>
+
+
+  <script>
+    $(document).ready(function() {
+
+      var images   = $(".image-box img");      // All images
+      var dots     = $(".dot");                // All dots
+      var total    = images.length;            // Total number of images
+      var current  = 0;                        // Current image index
+      var autoPlay = null;                     // Auto play interval
+
+      // Captions for each image
+      var captions = [
+        "Nature — Beautiful scenic view",
+        "City — Urban landscape",
+        "Mountains — Majestic peaks",
+        "Forest — Dense woodland",
+        "Ocean — Endless waves"
+      ];
+
+      // -----------------------------------------------
+      // Function: Show image at given index
+      // -----------------------------------------------
+      function showImage(index) {
+
+        // Hide all images and remove active class
+        images.removeClass("active").hide();
+        dots.removeClass("active");
+
+        // Show selected image
+        $(images[index]).addClass("active").show();
+        $(dots[index]).addClass("active");
+
+        // Update caption and counter
+        $("#caption").text(captions[index]);
+        $("#counter").text((index + 1) + " / " + total);
+
+        current = index;
+      }
+
+      // -----------------------------------------------
+      // Next Button Click
+      // -----------------------------------------------
+      $("#btnNext").click(function() {
+        var next = (current + 1) % total;   // Cycle back to 0 after last
+        showImage(next);
+      });
+
+      // -----------------------------------------------
+      // Previous Button Click
+      // -----------------------------------------------
+      $("#btnPrev").click(function() {
+        var prev = (current - 1 + total) % total;  // Cycle to last after 0
+        showImage(prev);
+      });
+
+      // -----------------------------------------------
+      // Dot Click — Jump to that image directly
+      // -----------------------------------------------
+      dots.click(function() {
+        var index = parseInt($(this).attr("data-index"));
+        showImage(index);
+      });
+
+      // -----------------------------------------------
+      // Auto Play — changes image every 2 seconds
+      // -----------------------------------------------
+      $("#btnPlay").click(function() {
+        if (autoPlay != null) return;    // Already playing
+
+        autoPlay = setInterval(function() {
+          var next = (current + 1) % total;
+          showImage(next);
+        }, 2000);
+      });
+
+      // -----------------------------------------------
+      // Stop Auto Play
+      // -----------------------------------------------
+      $("#btnStop").click(function() {
+        clearInterval(autoPlay);
+        autoPlay = null;
+      });
+
+      // Show first image on load
+      showImage(0);
+
+    });
+  </script>
+
+</body>
+</html>
