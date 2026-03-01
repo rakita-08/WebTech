@@ -6,51 +6,7 @@
   <!-- Include jQuery from CDN -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-    }
-    h2 {
-      color: darkblue;
-    }
-    select {
-      width: 250px;
-      padding: 8px;
-      font-size: 15px;
-      border: 1px solid #aaa;
-      border-radius: 4px;
-      margin-right: 10px;
-    }
-    button {
-      padding: 8px 16px;
-      background-color: darkblue;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-    .result {
-      margin-top: 15px;
-      font-size: 15px;
-      background-color: #f0f8ff;
-      border: 1px solid #aac;
-      padding: 12px;
-      width: 400px;
-      border-left: 4px solid darkblue;
-    }
-    h3 {
-      color: darkgreen;
-      margin-top: 30px;
-    }
-    label {
-      font-weight: bold;
-      font-size: 14px;
-      display: block;
-      margin-bottom: 6px;
-    }
-  </style>
+  <link rel="stylesheet" href="dropdown.css">
 </head>
 <body>
 
@@ -60,11 +16,9 @@
   <h3>1. Get Value on Button Click</h3>
   <label>Select a Course:</label>
   <select id="courseDropdown">
-    <option value="bsc">B.Sc. Computer Science</option>
+    <option value="bsc">B.Sc. CSIT</option>
     <option value="bca">BCA</option>
-    <option value="mca">MCA</option>
-    <option value="msc">M.Sc. Computer Science</option>
-    <option value="btech">B.Tech</option>
+    <option value="msc">BIT</option>
   </select>
   <button id="btnGet">Get Selected</button>
   <div class="result" id="result1"></div>
@@ -76,8 +30,6 @@
     <option value="">-- Select Subject --</option>
     <option value="wt">Web Technology</option>
     <option value="dbms">Database Management</option>
-    <option value="os">Operating System</option>
-    <option value="cn">Computer Networks</option>
     <option value="ai">Artificial Intelligence</option>
   </select>
   <div class="result" id="result2"></div>
@@ -87,10 +39,8 @@
   <label>Select Languages (Hold Ctrl for multiple):</label>
   <select id="multiSelect" multiple size="5">
     <option value="html">HTML</option>
-    <option value="css">CSS</option>
+    <option value="sql">SQL</option>
     <option value="js">JavaScript</option>
-    <option value="python">Python</option>
-    <option value="java">Java</option>
   </select>
   <br><br>
   <button id="btnMulti">Get All Selected</button>
