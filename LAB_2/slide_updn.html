@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Chaining - slideUp and slideDown</title>
+
+  <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <link rel="stylesheet" href="11.css">
+</head>
+<body>
+
+  <h2>jQuery Chaining — slideUp() and slideDown()</h2>
+
+  <!-- Section 1: Basic Chaining -->
+  <div class="section">
+    <h3>1. Basic Chaining — slideUp then slideDown</h3>
+    <p>Box will slide up first, then slide down — using method chaining.</p>
+
+    <div id="box1" class="box">I am Box 1 — Watch me slide!</div>
+
+    <br>
+    <button class="btn-chain" id="btnChain1">
+      Chain: slideUp → slideDown
+    </button>
+    <button class="btn-reset" id="btnShow1">Show Box</button>
+  </div>
+
+  <!-- Section 2: Chaining on Multiple Boxes -->
+  <div class="section">
+    <h3>2. Chaining slideDown on Multiple Elements</h3>
+    <p>All three boxes slide up together, then slide down one by one.</p>
+
+    <div id="box2" class="box">Box 2 — Green</div>
+    <div id="box3" class="box">Box 3 — Red</div>
+
+    <br>
+    <button class="btn-up"    id="btnUp23"  >slideUp All</button>
+    <button class="btn-down"  id="btnDown23">slideDown All</button>
+    <button class="btn-chain" id="btnChain23">Chain: Up → Down → Up</button>
+  </div>
+
+  <!-- Section 3: Chaining with Callback -->
+  <div class="section">
+    <h3>3. Chaining with Speed Options and Callback</h3>
+    <p>Demonstrates slow/fast speeds and a callback message after animation.</p>
+
+    <div id="box4"
+         style="width:300px; padding:20px; background-color:purple;
+                color:white; font-weight:bold; text-align:center;
+                border-radius:6px; margin-bottom:10px;">
+      Box 4 — Purple (with Callback)
+    </div>
+
+    <button class="btn-chain" id="btnSlow">Slow slideUp → Fast slideDown</button>
+    <button class="btn-toggle" id="btnToggle">Toggle (slideUp / slideDown)</button>
+
+    <p id="status">Status: Ready</p>
+  </div>
+
+
+  <script>
+    $(document).ready(function() {
+
+      // -----------------------------------------------
+      // 1. Basic Chaining: slideUp then slideDown
+      // -----------------------------------------------
+      $("#btnChain1").click(function() {
+        $("#box1")
+          .slideUp(800)         // slide up in 800ms
+          .slideDown(800);      // then slide down in 800ms  ← CHAINING
+      });
+
+      $("#btnShow1").click(function() {
+        $("#box1").slideDown(500);
+      });
+
+      // -----------------------------------------------
+      // 2. Multiple Boxes — slideUp and slideDown
+      // -----------------------------------------------
+      $("#btnUp23").click(function() {
+        $("#box2, #box3").slideUp(700);
+      });
+
+      $("#btnDown23").click(function() {
+        $("#box2, #box3").slideDown(700);
+      });
+
+      // Chaining: slideUp → slideDown → slideUp on both boxes
+      $("#btnChain23").click(function() {
+        $("#box2, #box3")
+          .slideUp(600)
+          .slideDown(600)
+          .slideUp(600);
+      });
+
+      // -----------------------------------------------
+      // 3. Speed options + Callback function
+      // -----------------------------------------------
+      $("#btnSlow").click(function() {
+        $("#status").text("Status: Sliding Up slowly...");
+
+        $("#box4")
+          .slideUp("slow", function() {
+            // This callback runs AFTER slideUp finishes
+            $("#status").text("Status: Slide Up done! Now sliding Down fast...");
+          })
+          .slideDown("fast", function() {
+            // This callback runs AFTER slideDown finishes
+            $("#status").text("Status: All Done! Animation complete.");
+          });
+      });
+
+      // Toggle: slideUp if visible, slideDown if hidden
+      $("#btnToggle").click(function() {
+        if ($("#box4").is(":visible")) {
+          $("#box4").slideUp(500);
+          $("#status").text("Status: Box hidden using slideUp.");
+        } else {
+          $("#box4").slideDown(500);
+          $("#status").text("Status: Box shown using slideDown.");
+        }
+      });
+
+    });
+  </script>
+
+</body>
+</html>
