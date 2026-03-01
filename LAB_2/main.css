@@ -1,0 +1,35 @@
+body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    h2 {
+      color: darkblue;
+    }
+    button {
+      padding: 9px 20px;
+      font-size: 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      color: white;
+      margin-right: 10px;
+    }
+    .btn-load   { background-color: darkblue;  }
+    .btn-clear  { background-color: darkred;   }
+
+    #content-box {
+      margin-top: 20px;
+      min-height: 80px;
+      border: 2px dashed #aaa;
+      padding: 20px;
+      border-radius: 6px;
+      background-color: #f9f9f9;
+      font-size: 15px;
+      color: #333;
+      width: 500px;
+    }
+    #status {
+      margin-top: 8px;
+      font-size: 13px;
+      color: gray;
+    }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AJAX Load Content</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+  <h2>AJAX - Load Content from External File</h2>
+
+  <button class="btn-load"  onclick="loadContent()">Load Content from data.html</button>
+  <button class="btn-clear" onclick="clearContent()">Clear</button>
+
+  <p id="status">Status: Waiting...</p>
+
+  <div id="content-box">
+    Content will appear here after clicking the button.
+  </div>
+
+
+  <script>
+
+    function loadContent() {
+
+      document.getElementById("status").innerHTML = "Status: Loading...";
+
+      // Create XMLHttpRequest object
+      var xhr = new XMLHttpRequest();
+
+      // Configure it: GET request to data.html
+      xhr.open("GET", "data.html", true);
+
+      // What to do when response is received
+      xhr.onreadystatechange = function() {
+
+        // readyState 4 = request finished
+        // status 200   = OK (success)
+        if (xhr.readyState == 4) {
+
+          if (xhr.status == 200) {
+            // Load content into the div
+            document.getElementById("content-box").innerHTML = xhr.responseText;
+            document.getElementById("status").innerHTML =
+              "Status: Content loaded successfully!";
+
+          } else {
+            // Handle error
+            document.getElementById("content-box").innerHTML =
+              "<span style='color:red;'>Error: Could not load data.html.<br>" +
+              "Make sure data.html is in the same folder and you are running " +
+              "this on a local server (e.g. VS Code Live Server).</span>";
+            document.getElementById("status").innerHTML =
+              "Status: Error — HTTP " + xhr.status;
+          }
+        }
+      };
+
+      // Send the request
+      xhr.send();
+    }
+
+    function clearContent() {
+      document.getElementById("content-box").innerHTML =
+        "Content will appear here after clicking the button.";
+      document.getElementById("status").innerHTML =
+        "Status: Cleared.";
+    }
+
+  </script>
+
+</body>
+</html>

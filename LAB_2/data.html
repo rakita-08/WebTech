@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <h3 style="color: darkblue;">Content Loaded via AJAX!</h3>
+
+  <p>This content was fetched from <b>data.html</b> using an AJAX request
+     without reloading the page.</p>
+
+  <h4>What is AJAX?</h4>
+  <p>AJAX stands for <b>Asynchronous JavaScript and XML</b>. It allows web
+     pages to communicate with the server in the background and update parts
+     of the page without a full page reload.</p>
+
+  <h4>Key Points:</h4>
+  <ul>
+    <li>Uses <b>XMLHttpRequest</b> object</li>
+    <li>Works <b>asynchronously</b> (does not block the page)</li>
+    <li>Can load HTML, JSON, XML, or plain text</li>
+    <li>Updates only a <b>part of the page</b>, not the whole page</li>
+  </ul>
+
+  <p style="color: green; font-weight: bold;">
+    &#10004; Loaded at: <span id="loadTime"></span>
+  </p>
+
+  <script>
+    // Show current time when this content is loaded
+    var now = new Date();
+    document.getElementById("loadTime").innerHTML = now.toLocaleTimeString();
+  </script>
+
+</body>
+</html>
