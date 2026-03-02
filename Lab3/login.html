@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 60px; }
+    h2   { color: darkblue; }
+    input[type="text"],
+    input[type="password"] {
+      width: 220px; padding: 7px; font-size: 14px;
+      border: 1px solid #aaa; border-radius: 4px;
+    }
+    input[type="submit"] {
+      padding: 8px 20px; background-color: darkblue;
+      color: white; border: none; border-radius: 4px;
+      font-size: 14px; cursor: pointer;
+    }
+    td { padding: 8px; font-size: 15px; }
+    .error { color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h2>User Login</h2>
+
+  <form action="login.php" method="post">
+    <table>
+      <tr>
+        <td>Username:</td>
+        <td><input type="text"     name="username" placeholder="Enter username"></td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><input type="password" name="password" placeholder="Enter password"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" value="Login"></td>
+      </tr>
+    </table>
+  </form>
+
+  <p style="color:gray; font-size:13px;">
+    Hint: Username = <b>admin</b> | Password = <b>admin123</b>
+  </p>
+
+</body>
+</html>
