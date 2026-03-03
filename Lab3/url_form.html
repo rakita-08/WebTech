@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pass Variables via URL</title>
+</head>
+<body>
+
+  <h2>Passing Variables Through URL</h2>
+
+  <!-- Method 1: Manual Links with variables in URL -->
+  <h3>1. Click a Link (variables in URL)</h3>
+  <a href="url_receive.php?name=Raynee&course=BScCSIT&age=20">
+    Click here (name=Raynee, course=BScCSIT, age=20)
+  </a>
+  <br><br>
+  <a href="url_receive.php?name=Praun&course=BCA&age=21">
+    Click here (name=Praun, course=BCA, age=21)
+  </a>
+
+  <!-- Method 2: Form using GET method — values go into URL -->
+  <h3>2. Form Submission via GET (values appear in URL)</h3>
+  <form action="url_receive.php" method="get">
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td><input type="text" name="name" placeholder="Enter name"></td>
+      </tr>
+      <tr>
+        <td>Course:</td>
+        <td>
+          <select name="course">
+            <option value="BScCS">BScCSIT</option>
+            <option value="BCA">BCA</option>
+            <option value="MCA">MCA</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Age:</td>
+        <td><input type="number" name="age" placeholder="Enter age"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" value="Submit via URL"></td>
+      </tr>
+    </table>
+  </form>
+
+</body>
+</html>
