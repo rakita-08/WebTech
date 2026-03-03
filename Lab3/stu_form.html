@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Details Form</title>
+</head>
+<body>
+
+  <h2>Enter Student Details</h2>
+
+  <form action="save_stu.php" method="post">
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td><input type="text" name="name" placeholder="Enter name" required></td>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td><textarea name="address" rows="3" cols="30"></textarea></td>
+      </tr>
+      <tr>
+        <td>Phone:</td>
+        <td><input type="text" name="phone" placeholder="Enter phone number"></td>
+      </tr>
+      <tr>
+        <td>Age:</td>
+        <td><input type="number" name="age" placeholder="Enter age"></td>
+      </tr>
+      <tr>
+        <td>Gender:</td>
+        <td>
+          <input type="radio" name="gender" value="Male">   Male
+          <input type="radio" name="gender" value="Female"> Female
+          <input type="radio" name="gender" value="Other">  Other
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input type="submit" value="Save to Database">
+          <input type="reset"  value="Clear">
+        </td>
+      </tr>
+    </table>
+  </form>
+
+</body>
+</html>
