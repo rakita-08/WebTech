@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="test.xsd">
+
+    <student>
+        <id>101</id>
+        <name>Mimi</name>
+        <department>CSIT</department>
+    </student>
+
+    <student>
+        <id>102</id>
+        <name>Rakee</name>
+        <department>IT</department>
+    </student>
+
+</students>
