@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<books xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="book_cond.xsd">
+
+    <book isbn="12345">
+
+        <name>
+            <firstname>Richard</firstname>
+            <middlename>Willian</middlename>
+            <lastname>Charles</lastname>
+        </name>
+
+        <author>Stephen C. Wailings</author>
+        <author>Andrews T. Hamlinton</author>
+
+        <pageno>350</pageno>
+        <price>900</price>
+
+    </book>
+
+</books>
