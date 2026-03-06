@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<books>
+    <book>
+        <title>Computer Networks</title>
+        <author>Andrew Tanenbaum</author>
+        <isbn>9780132126953</isbn>
+        <publisher>Pearson</publisher>
+        <edition>5</edition>
+        <price>850</price>
+    </book>
+
+    <book>
+        <title>Operating System Concepts</title>
+        <author>Silberschatz</author>
+        <isbn>9781118063330</isbn>
+        <publisher>Wiley</publisher>
+        <edition>9</edition>
+        <price>950</price>
+    </book>
+</books>
