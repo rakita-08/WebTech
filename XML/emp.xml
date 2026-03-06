@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<employees xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="emp.xsd">
+
+    <employee>
+        <name>Raj Shrestha</name>
+        <address>Kathmandu</address>
+        <phone>9841234567</phone>
+        <designation>Manager</designation>
+        <salary>50000</salary>
+    </employee>
+
+</employees>
