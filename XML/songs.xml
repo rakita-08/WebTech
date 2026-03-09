@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<songs>
+
+<song>
+<name>SOS</name>
+<singer>SEVENTEEN</singer>
+<composedby>WOOZI, BUMZU, Marshmello</composedby>
+<length>3:13</length>
+</song>
+
+<song>
+<name>Bittersweet</name>
+<singer>Wonwoo, Mingyu, LeeHi</singer>
+<composedby>BUMZU</composedby>
+<length>2:55</length>
+</song>
+
+<song>
+<name>Made Me a Man</name>
+<singer>Jackson Wang</singer>
+<composedby>Jackson Wang, LOUALLDAY, SAYAK</composedby>
+<length>3:16</length>
+</song>
+
+<song>
+<name>Stay</name>
+<singer>Justin Bieber</singer>
+<composedby>The Kid Laroi</composedby>
+<length>2:30</length>
+</song>
+
+</songs>
